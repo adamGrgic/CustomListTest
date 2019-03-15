@@ -11,7 +11,14 @@ namespace CustomListProject
         // Member Variables
         private int count = 0;
         private int capacity;
-        private  T[] myArray;
+        private T[] myArray;
+
+        // Indexer property for our 
+        public T this[int i]
+        {
+            get { return myArray[i]; }
+            set { myArray[i] = value; }
+        }
 
         private int Capacity
         {
@@ -80,6 +87,31 @@ namespace CustomListProject
                 count++;
             }
 
+           
+
+        }
+        public void Remove(T item)
+        {
+            if (count <= 0)
+            {
+                throw new System.ArgumentException("You cannot go below zero items in your list.");
+            }
+            
+            else
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    if (i = myArray.)
+
+                }
+            
+               
+                
+                
+
+            }
         }
     }
+
+     
 }
