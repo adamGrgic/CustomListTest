@@ -90,24 +90,42 @@ namespace CustomListProject
            
 
         }
+        //Remove item T from a list 
         public void Remove(T item)
         {
+
+            // If the count falls below 0, it goes into a negative list item which we dont want / isnt possible. 
             if (count <= 0)
             {
+                // system tells the user not to go below zero 
                 throw new System.ArgumentException("You cannot go below zero items in your list.");
             }
             
             else
             {
+                // Create new array to store the removed object 
+                T[] newArray = new T[capacity];
+
+                // run a for loop to match user input to list item 
                 for (int i = 0; i < count; i++)
                 {
-                    if (i = myArray.)
+                    // Conditional to check which item is equal to the list item
+                    if (!(myArray[i].Equals(item)))
+                    {
+                        // Array item that doesn't fit the search is moved into a new array 
+                        newArray[i] = myArray[i];
+                        // 
+
+                    }
+                    else if (myArray[i].Equals(item)) 
+                    {
+                        
+                    }
 
                 }
-            
-               
-                
-                
+
+            count--;
+            myArray = newArray;  
 
             }
         }

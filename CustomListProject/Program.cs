@@ -10,7 +10,7 @@ namespace CustomListProject
     {
         static void Main(string[] args)
         {
-        CustomList<int> testList = new CustomList<int>();
+            CustomList<int> testList = new CustomList<int>();
 
             testList.Add(1);
             testList.Add(2);
@@ -24,6 +24,8 @@ namespace CustomListProject
             testList.Add(10);
             testList.Add(11);
             testList.Add(12);
+
+            testList.Remove(3);
 
             for (int i = 0; i < 13; i++)
             {
