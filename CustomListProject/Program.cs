@@ -32,6 +32,13 @@ namespace CustomListProject
                 Console.WriteLine(testList[i]);
             }
 
+
+            
+            testList.ToString();
+            testList = new derivedClass();
+            testList.ToString();
+
+
         }
     }
 }

@@ -12,8 +12,9 @@ namespace CustomListProject
         private int count = 0;
         private int capacity;
         private T[] myArray;
+        string myString = "";
 
-        // Indexer property for our 
+        // Indexer property for myArray
         public T this[int i]
         {
             get { return myArray[i]; }
@@ -114,7 +115,7 @@ namespace CustomListProject
                     {
                         // Array item that doesn't fit the search is moved into a new array 
                         newArray[i] = myArray[i];
-                        // 
+                        
 
                     }
                     else if (myArray[i].Equals(item)) 
@@ -129,6 +130,77 @@ namespace CustomListProject
 
             }
         }
+
+        // ToString overrides ConverValuesToString() method 
+        public override string ToString()
+        {
+            string newString = "";
+            for (int i = 0; i < count; i++) {
+                // The result of ConverValuesToString() is myString which is converted to newString 
+                newString += ConvertValuesToString(); 
+            }
+            return newString;
+        }
+        // Convert list items into a fluid string 
+        private string ConvertValuesToString()
+        {
+            // for loop that runs through values in our custom list (myArray)
+            for (int i = 0; i < count; i++)
+            {
+                // each item of myArray is added to myString to create one string. 
+                myString += myArray[i];
+            }
+            return myString;
+        }
+
+
+        // Overload plus operator 
+        // Overload is when a method has more than one combination of parameters 
+        public static CustomList<T> operator +(CustomList<T> oneArray, CustomList<T> twoArray)
+        {
+            // Create generic list, type T, titled combinedArray 
+            CustomList<T> combinedArray = new CustomList<T>();
+
+            for (int i = 0; i < oneArray.count; i++)
+            {
+                combinedArray.Add(oneArray[i]);
+            }
+
+            for (int i = 0; i < twoArray.count; i++)
+            {
+                combinedArray.Add(twoArray[i]);
+            }
+
+            return combinedArray;
+        }
+
+        public static CustomList<T> operator +(CustomList<T> oneArray, CustomList<T> twoArray, CustomList<T> threeArray)
+        {
+            // Create generic list, type T, titled combinedArray 
+            CustomList<T> combinedArray = new CustomList<T>();
+
+            for (int i = 0; i < oneArray.count; i++)
+            {
+                combinedArray.Add(oneArray[i]);
+            }
+
+            for (int i = 0; i < twoArray.count; i++)
+            {
+                combinedArray.Add(twoArray[i]);
+            }
+
+            for (int i = 0; i < threeArray.count; i++)
+            {
+                combinedArray.Add(threeArray[i]);
+            }
+            return combinedArray;
+        }
+
+
+
+
+
+
     }
 
      
