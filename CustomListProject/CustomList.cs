@@ -8,6 +8,7 @@ namespace CustomListProject
 {
     public class CustomList<T>
     {
+        // test comment
         // Member Variables
         private int count = 0;
         private int capacity;
@@ -174,7 +175,7 @@ namespace CustomListProject
             return combinedArray;
         }
 
-        public static CustomList<T> operator +(CustomList<T> oneArray, CustomList<T> twoArray, CustomList<T> threeArray)
+        public static CustomList<T> operator -(CustomList<T> oneArray, CustomList<T> twoArray)
         {
             // Create generic list, type T, titled combinedArray 
             CustomList<T> combinedArray = new CustomList<T>();
@@ -189,12 +190,9 @@ namespace CustomListProject
                 combinedArray.Add(twoArray[i]);
             }
 
-            for (int i = 0; i < threeArray.count; i++)
-            {
-                combinedArray.Add(threeArray[i]);
-            }
             return combinedArray;
         }
+
 
 
 
